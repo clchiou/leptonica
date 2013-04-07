@@ -36,7 +36,8 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-noinst_PROGRAMS = xtractprotos$(EXEEXT)
+# Comment xtractprotos out as we don't need it and it breaks build.
+noinst_PROGRAMS = #xtractprotos$(EXEEXT)
 subdir = src
 DIST_COMMON = $(pkginclude_HEADERS) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in $(srcdir)/endianness.h.in
