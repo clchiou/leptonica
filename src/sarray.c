@@ -1843,12 +1843,14 @@ struct dirent  *pdirentry;
         return (SARRAY *)ERROR_PTR("safiles not made", procName, NULL);
     while ((pdirentry = readdir(pdir)))  {
 
+#if 0
         /* It's nice to ignore directories.  For this it is necessary to
          * define _BSD_SOURCE in the CC command, because the DT_DIR
          * flag is non-standard.  */
 #if !defined(__SOLARIS__)
         if (pdirentry->d_type == DT_DIR)
             continue;
+#endif
 #endif
 
             /* Filter out "." and ".." if they're passed through */
